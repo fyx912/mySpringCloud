@@ -3,4 +3,5 @@ include 'eureka-server'
 include 'eureka-client'
 include 'consul-server'
 include 'eureka-consumer'
+include 'config-server'
 

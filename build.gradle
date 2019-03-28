@@ -29,7 +29,9 @@ subprojects {
                 "org.springframework.boot:spring-boot-starter-test:${springBootVersion}",
 
                 // eureka 服务中心
-                "org.springframework.cloud:spring-cloud-starter-eureka-server:1.4.6.RELEASE"
+//                "org.springframework.cloud:spring-cloud-starter-eureka-server:1.4.6.RELEASE",
+                //加入security，是因为访问eureka-server需要用户名和密码访问，为了安全
+                "org.springframework.boot:spring-boot-starter-security:${springBootVersion}"
         )
 
         providedRuntime (

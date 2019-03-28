@@ -22,7 +22,6 @@ import org.springframework.context.annotation.ComponentScan;
  * @create 2019/3/20
  * @since 1.0.0
  */
-@ComponentScan
 @EnableDiscoveryClient
 @SpringBootApplication
 public class ApplicationEurekaClient {
