@@ -1,6 +1,27 @@
 # Compiled class file
 *.class
 
+bin/
+out/
+
+*.class
+
+#Intellij
+*.iml
+*.idea/
+out/
+build/
+gradle/
+target/
+*.log
+logs/
+
+#eclipse
+.project
+.classpath
+.settins/
+
+
 # Log file
 *.log
 

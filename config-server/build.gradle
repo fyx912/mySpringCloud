@@ -13,8 +13,9 @@ repositories {
 
 dependencies {
     compile(
-            'org.springframework.cloud:spring-cloud-config-server:1.4.4.RELEASE',
-            'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:1.4.6.RELEASE',
+            //<!--Spring Cloud Config 服务端依赖-->
+            "org.springframework.cloud:spring-cloud-config-server:${springCloudConfigVersion}",
+            "org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:${springCloudEurekaVersion}",
             //连接config-server也需要用户名和密码
             "org.springframework.boot:spring-boot-starter-security:${springBootVersion}",
             "org.springframework.boot:spring-boot-starter-actuator:${springBootVersion}"

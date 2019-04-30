@@ -11,27 +11,21 @@ package com; /**
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.cloud.client.loadbalancer.LoadBalanced;
-import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.web.client.RestTemplate;
 
 /**
  * 〈一句话功能简述〉<br> 
- * 〈eureka client 服务提供方〉
+ * 〈eureka client 服务提供方er〉
+ *  本程序和eureka client 一样，用于实现负载均衡，已经熔断
  *
  * @author THINK
  * @create 2019/3/20
  * @since 1.0.0
  */
-@RefreshScope//开启更新功能
 @EnableEurekaClient
 @SpringBootApplication
-public class ApplicationEurekaClient {
+public class ApplicationEurekaClientTwo {
     public static void main(String[] args){
-        SpringApplication.run(ApplicationEurekaClient.class,args);
+        SpringApplication.run(ApplicationEurekaClientTwo.class,args);
     }
 }

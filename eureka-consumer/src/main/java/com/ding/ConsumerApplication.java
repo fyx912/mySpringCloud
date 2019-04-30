@@ -1,37 +1,25 @@
-/**
- * Copyright (C), 2015-2019, XXX有限公司
- * FileName: ConsumerApplication
- * Author:   THINK
- * Date:     2019/3/20 17:25
- * Description:
- * History:
- * <author>          <time>          <version>          <desc>
- * 作者姓名           修改时间           版本号              描述
- */
 package com.ding;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+
+import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.netflix.feign.EnableFeignClients;
+import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.client.RestTemplate;
 
-/**
- * 〈一句话功能简述〉<br> 
- * 〈Eureka服务 消费方〉
- *
- * @author THINK
- * @create 2019/3/20
- * @since 1.0.0
- */
-// 注解用来将当前应用加入到服务治理体系中。
-@EnableDiscoveryClient
+@EnableHystrixDashboard//开启dashboard，通过图形化的方式监控: 查看 http://127.0.0.1:7020/hystrix.stream
+@EnableCircuitBreaker//开启断路器功能
+@EnableFeignClients//采用Feign方式负载均衡
+@EnableEurekaClient
 @SpringBootApplication
 public class ConsumerApplication {
-
     @Bean
-    public RestTemplate restTemplate() {
+    @LoadBalanced//Ribbon负载均衡
+    public RestTemplate restTemplate(){
         return new RestTemplate();
     }
 
